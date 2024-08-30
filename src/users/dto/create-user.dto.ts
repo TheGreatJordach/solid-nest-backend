@@ -12,6 +12,6 @@ export class CreateUserDto {
   readonly email: string;
   @IsStrongPassword()
   readonly password: string;
-  @IsPhoneNumber()
+  @IsPhoneNumber("MA")
   readonly phone: string;
 }

@@ -9,31 +9,39 @@ import {
 } from "@nestjs/common";
 import { CreateUserDto } from "./dto/create-user.dto";
 import { UpdateUserDto } from "./dto/update-user.dto";
+import { UsersService } from "./users.service";
 
 @Controller("users")
 export class UsersController {
-  @Post()
-  create(@Body() createUserDto: CreateUserDto) {
-    return `This Handler create with data ${createUserDto} and return a user`;
+  constructor(private readonly usersService: UsersService) {}
+
+  @Get("/ids")
+  getAllUsersIds() {
+    return this.usersService.returnAllUsersIds();
   }
 
-  @Patch("id")
-  update(@Param("id") id: string, @Body() UpdateUserDto: UpdateUserDto) {
-    return `This Handler update the user with id ${id} with data ${UpdateUserDto} and return updated user`;
+  @Post()
+  create(@Body() createUserDto: CreateUserDto) {
+    return this.usersService.create(createUserDto);
+  }
+
+  @Patch("/:id")
+  update(@Param("id") id: string, @Body() updateUserDto: UpdateUserDto) {
+    return this.usersService.update(+id, updateUserDto);
   }
 
   @Get()
-  getUser() {
-    return "This Handler return all users";
+  getUsers() {
+    return this.usersService.getAllUsers();
   }
 
-  @Get(":id")
+  @Get("/:id")
   getUserById(@Param("id") id: string) {
-    return "This Handler return a user with id " + id;
+    return this.usersService.getUserByID(+id);
   }
 
-  @Delete(":id")
+  @Delete("/:id")
   delete(@Param("id") id: string) {
-    return "This Handler delete  and return a user with id " + id;
+    return this.usersService.delete(+id);
   }
 }

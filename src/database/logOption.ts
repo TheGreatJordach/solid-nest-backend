@@ -1,7 +1,7 @@
 export const LogsOptions = {
-  logQueries: true,
-  logErrors: true,
-  logMigrations: true,
-  logSchema: true,
+  logQueries: false,
+  logErrors: false,
+  logMigrations: false,
+  logSchema: false,
   logOnlyFailedQueries: false,
 };

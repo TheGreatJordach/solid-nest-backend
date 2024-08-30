@@ -21,8 +21,6 @@ import { User } from "../users/entity/user-entity";
         synchronize: configService.getOrThrow<boolean>(
           "DATASOURCE_ENTITIES_SYNC",
         ),
-        logNotifications: true,
-        logging: true,
         loggingOptions: LogsOptions,
       }),
       inject: [ConfigService],
