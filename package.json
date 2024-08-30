@@ -2,9 +2,9 @@
   "name": "solid-nest-backend",
   "version": "0.0.1",
   "description": "",
-  "author": "",
+  "author": "Jordach MAKAYA",
   "private": true,
-  "license": "UNLICENSED",
+  "license": "MIT",
   "scripts": {
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",

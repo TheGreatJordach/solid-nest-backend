@@ -10,6 +10,7 @@ import {
 import { CreateUserDto } from "./dto/create-user.dto";
 import { UpdateUserDto } from "./dto/update-user.dto";
 import { UsersService } from "./users.service";
+import { IdDto } from "../common/id-dto";
 
 @Controller("users")
 export class UsersController {
@@ -26,8 +27,8 @@ export class UsersController {
   }
 
   @Patch("/:id")
-  update(@Param("id") id: string, @Body() updateUserDto: UpdateUserDto) {
-    return this.usersService.update(+id, updateUserDto);
+  update(@Param() { id }: IdDto, @Body() updateUserDto: UpdateUserDto) {
+    return this.usersService.update(id, updateUserDto);
   }
 
   @Get()
@@ -36,12 +37,12 @@ export class UsersController {
   }
 
   @Get("/:id")
-  getUserById(@Param("id") id: string) {
-    return this.usersService.getUserByID(+id);
+  getUserById(@Param() { id }: IdDto) {
+    return this.usersService.getUserByID(id);
   }
 
   @Delete("/:id")
-  delete(@Param("id") id: string) {
-    return this.usersService.delete(+id);
+  delete(@Param() { id }: IdDto) {
+    return this.usersService.delete(id);
   }
 }
