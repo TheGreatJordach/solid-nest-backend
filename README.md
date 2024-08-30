@@ -1,3 +1,7 @@
+
+![](assets/images/cicd.png)
+
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>
@@ -9,6 +13,13 @@
     <p align="center">
 
 [![CI Pipeline](https://github.com/TheGreatJordach/solid-nest-backend/actions/workflows/github-ci.yml/badge.svg)](https://github.com/TheGreatJordach/solid-nest-backend/actions/workflows/github-ci.yml)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=TheGreatJordach_solid-nest-backend&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=TheGreatJordach_solid-nest-backend)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=TheGreatJordach_solid-nest-backend&metric=bugs)](https://sonarcloud.io/summary/new_code?id=TheGreatJordach_solid-nest-backend)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=TheGreatJordach_solid-nest-backend&metric=coverage)](https://sonarcloud.io/summary/new_code?id=TheGreatJordach_solid-nest-backend)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=TheGreatJordach_solid-nest-backend&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=TheGreatJordach_solid-nest-backend)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=TheGreatJordach_solid-nest-backend&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=TheGreatJordach_solid-nest-backend)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=TheGreatJordach_solid-nest-backend&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=TheGreatJordach_solid-nest-backend)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=TheGreatJordach_solid-nest-backend&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=TheGreatJordach_solid-nest-backend)
 
 </p>
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
