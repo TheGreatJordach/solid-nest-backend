@@ -2,6 +2,7 @@ import { Module } from "@nestjs/common";
 import { ConfigModule, ConfigService } from "@nestjs/config";
 import { TypeOrmModule } from "@nestjs/typeorm";
 import { LogsOptions } from "./logOption";
+import { User } from "../users/entity/user-entity";
 
 @Module({
   imports: [
@@ -16,7 +17,7 @@ import { LogsOptions } from "./logOption";
         port: configService.getOrThrow<number>("DATASOURCE_PORT"),
         username: configService.getOrThrow<string>("DATASOURCE_USERNAME"),
         password: configService.getOrThrow<string>("DATASOURCE_PASSWORD"),
-        entities: [],
+        entities: [User],
         synchronize: configService.getOrThrow<boolean>(
           "DATASOURCE_ENTITIES_SYNC",
         ),
