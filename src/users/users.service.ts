@@ -154,4 +154,12 @@ export class UsersService {
       );
     }
   }
+
+  async find(email: string): Promise<User> {
+    console.log(`Service try to find ${email}`);
+    return await this.usersRepository.findOne({ where: { email } });
+    /**
+     * @return : null if user not found
+     * **/
+  }
 }

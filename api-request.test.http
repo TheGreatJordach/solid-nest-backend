@@ -1,11 +1,125 @@
-###
+######
+###### GET USER BY ID
 GET http://localhost:3000/users/14
 Accept: application/json
 
 
 ###
-######
-GET http://localhost:3000/users/ids
+###### GET USER BY EMAIL
+GET http://localhost:3000/users/?email=mak@hotmail.com
 Accept: application/json
 
 ###
+
+###
+###### GET ALL USERS IDs
+GET http://localhost:3000/users/ids
+Accept: application/json
+###
+
+
+### CREATE USER
+### Send POST request with json body should fail
+POST http://localhost:3000/users/
+Content-Type: application/json
+
+{
+  "id": 999,
+  "value": "content"
+}
+
+
+### CREATE USER
+### Send POST request with json body should fail Password not strong
+POST http://localhost:3000/users/
+Content-Type: application/json
+
+{
+  "name": "Fake user",
+  "email": "making@email.com",
+  "password": "content",
+  "phone": "0629955944"
+}
+
+
+### CREATE USER
+### Send POST request with json body should fail already exists.
+POST http://localhost:3000/users/
+Content-Type: application/json
+
+{
+  "name": "Fake user",
+  "email": "mak@hotmail.com",
+  "password": "StrongP@ss2265",
+  "phone": "0629955944"
+}
+
+
+### CREATE USER
+### Send POST request with json body should fail email already exists.
+POST http://localhost:3000/users/
+Content-Type: application/json
+
+{
+  "name": "Fake user",
+  "email": "mak1@hotmail.com",
+  "password": "StrongP@ss2265",
+  "phone": "0629955944"
+}
+
+
+### CREATE USER
+### Send POST request with json body should fail phone already exists.
+POST http://localhost:3000/users/
+Content-Type: application/json
+
+{
+  "name": "Fake user",
+  "email": "mak2@hotmail.com",
+  "password": "StrongP@ss2265",
+  "phone": "0629955944"
+}
+
+### CREATE USER / SINGUP
+### Change email/Phone Send POST request with json body should pass
+POST http://localhost:3000/users/signup
+Content-Type: application/json
+
+{
+  "name": "H Contrabass ",
+  "email": "hobora@hotmail.com",
+  "password": "StrongP@ss2265",
+  "phone": "0629895944"
+}
+
+
+### SIGNIN
+### Change email/Phone Send POST request with json body should pass
+POST http://localhost:3000/users/signing
+Content-Type: application/json
+
+{
+  "name": "H Contrabass ",
+  "email": "hobora@hotmail.com",
+  "password": "StrongP@ss2265",
+  "phone": "0629895944"
+}
+
+
+###### DELETE USER BY ID
+DELETE http://localhost:3000/users/32
+Accept: application/json
+
+
+### UPDATE USER
+### Change email/Phone Send POST request with json body should pass
+PATCH http://localhost:3000/users/14
+Content-Type: application/json
+
+{
+  "name": "Fake user",
+  "email": "mak3@hotmail.com",
+  "password": "StrongP@ss2265",
+  "phone": "0627955944"
+}
+
