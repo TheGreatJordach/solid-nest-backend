@@ -11,7 +11,10 @@ import { CreateUserDto } from "./dto/create-user.dto";
 import { UpdateUserDto } from "./dto/update-user.dto";
 import { UsersService } from "./users.service";
 import { IdDto } from "../common/id-dto";
+import { Serialize } from "../interceptors/serializer.interceptor";
+import { UserDto } from "./dto/user.dto";
 
+@Serialize(UserDto)
 @Controller("users")
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
@@ -19,6 +22,11 @@ export class UsersController {
   @Get("/ids")
   getAllUsersIds() {
     return this.usersService.returnAllUsersIds();
+  }
+
+  @Get("/:id")
+  getUserById(@Param() { id }: IdDto) {
+    return this.usersService.getUserByID(id);
   }
 
   @Post()
@@ -34,11 +42,6 @@ export class UsersController {
   @Get()
   getUsers() {
     return this.usersService.getAllUsers();
-  }
-
-  @Get("/:id")
-  getUserById(@Param() { id }: IdDto) {
-    return this.usersService.getUserByID(id);
   }
 
   @Delete("/:id")

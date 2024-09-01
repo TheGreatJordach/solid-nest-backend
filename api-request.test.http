@@ -1,0 +1,11 @@
+###
+GET http://localhost:3000/users/14
+Accept: application/json
+
+
+###
+######
+GET http://localhost:3000/users/ids
+Accept: application/json
+
+###
